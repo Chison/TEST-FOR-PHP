@@ -6,7 +6,7 @@
  * Time: 13:39
  */
 
-namespace chison\Redis;
+namespace chison\redis;
 
 
 class HashRedis{
