@@ -6,6 +6,6 @@ namespace chison\core;
 class Load
 {
     static function autoload($class){
-        require str_replace('\\','/',BASEDIR.'\\'.$class.'.php');
+        require str_replace('\\','/',BASE.'\\'.$class.'.php');
     }
 }

@@ -25,15 +25,18 @@ class Register
      * @param $alias
      * @param $object
      */
-    public function set($alias, $object)
+    public static function set($alias, $object)
     {
-        self::$RegTree[$alias] = $object;
+        if(!isset(self::$RegTree[$alias])){
+            self::$RegTree[$alias] = $object;
+        }
+        return self::$RegTree[$alias];
     }
 
     /**
      * @param $name
      */
-    public function _unset($name)
+    public static function _unset($name)
     {
         unset(self::$RegTree[$name]);
     }
@@ -42,8 +45,15 @@ class Register
      * @param $name
      * @return mixed
      */
-    public function get($name)
+    public static function get($name)
     {
         return self::$RegTree[$name];
+    }
+
+    public static function has($name){
+        if(isset(self::$RegTree[$name])){
+            return true;
+        }
+        return false;
     }
 }
